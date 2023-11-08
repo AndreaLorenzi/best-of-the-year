@@ -9,7 +9,11 @@
     <h1>Le tue canzoni dell'anno:</h1>
     <ul>
         <li th:each="song : ${getBestSongs}">
-            <span th:text="|${song.id} - ${song.title}"></span>
+
+            <a th:href="@{|/songs/${song.id}|}">
+                <span th:text="|${song.id} - ${song.title}"></span>
+            </a>
+
         </li>
     </ul>
     <a href="/home">Home</a>

@@ -9,7 +9,10 @@
     <h1>I tuoi film dell'anno:</h1>
     <ul>
         <li th:each="movie : ${getBestMovies}">
-            <span th:text="|${movie.id} - ${movie.title}"></span>
+            <a th:href="@{|/movies/${movie.id}|}">
+                <span th:text="${movie.id}"></span>
+                <span th:text="${movie.title}"></span>
+            </a>
 
         </li>
     </ul>

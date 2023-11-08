@@ -5,6 +5,7 @@ import com.experis.course.bestoftheyear.model.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -52,4 +53,25 @@ public class IndexController {
         return "songs";
     }
 
+
+    @GetMapping("/movies/{id}")
+    public String showMovie(@PathVariable("id") int movieId, Model model) {
+
+        for (Movie movie : getBestMovies()) {
+            if (movie.getId() == movieId) {
+                model.addAttribute("movie", movie);
+            }
+        }
+        return "movie-details";
+    }
+
+    @GetMapping("/songs/{id}")
+    public String showSong(@PathVariable("id") int songId, Model model) {
+        for (Song song : getBestSongs()) {
+            if (song.getId() == songId) {
+                model.addAttribute("song", song);
+            }
+        }
+        return "song-details";
+    }
 }
