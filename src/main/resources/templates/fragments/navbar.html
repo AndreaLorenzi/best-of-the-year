@@ -9,19 +9,36 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" th:classAppend="${area == 'home' ? 'active' : ''}"
                        th:href="@{/home}">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:classAppend="${area == 'song' ? 'active' : ''}"
-                       th:href="@{/songs}">Song</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:classAppend="${area == 'movie' ? 'active' : ''}"
-                       th:href="@{/movies}">Movie</a>
-                </li>
+                <div class="px-3 d-flex">
+                    <div>
+                        <li class="nav-item">
+                            <button class="btn btn-secondary">
+                                <a class="nav-link"
+                                   th:classAppend="${area == 'song' ? 'active' : ''}"
+                                   th:href="@{/songs}">Song
+                                </a>
+                            </button>
+                        </li>
+                    </div>
+                    <div>
+                        <li class="nav-item">
+                            <button class="btn btn-secondary">
+                                <a class="nav-link"
+                                   th:classAppend="${area == 'movie' ? 'active' : ''}"
+                                   th:href="@{/movies}">Movie
+                                </a>
+                            </button>
+                        </li>
+                    </div>
+
+                </div>
+
             </ul>
         </div>
     </div>
