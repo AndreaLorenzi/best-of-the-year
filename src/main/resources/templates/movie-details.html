@@ -4,6 +4,8 @@
 <head th:insert="/fragments/resources :: headResources('Movie Detail')"></head>
 
 <body>
+<nav th:replace="/fragments/navbar :: topNavbar('movie Details')"></nav>
+
 <h1>Film Detail</h1>
 <div th:if="${movie != null}">
     <p th:text="|ID: ${movie.id}|"></p>
